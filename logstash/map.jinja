@@ -3,13 +3,19 @@
     'pkg': 'logstash',
     'svc': 'logstash',
     'pkgstate': 'latest',
-    'indent': 4
+    'indent': 4,
+    'inputs_source': 'salt://logstash/files/01-inputs.conf',
+    'filters_source': 'salt://logstash/files/02-filters.conf',
+    'outputs_source': 'salt://logstash/files/03-outputs.conf'
   },
   'RedHat': {
     'pkg': 'logstash',
     'svc': 'logstash',
     'pkgstate': 'latest',
-    'indent': 4
+    'indent': 4,
+    'inputs_source': 'salt://logstash/files/01-inputs.conf',
+    'filters_source': 'salt://logstash/files/02-filters.conf',
+    'outputs_source': 'salt://logstash/files/03-outputs.conf'
   }
 }, merge=salt['pillar.get']('logstash')) %}
 

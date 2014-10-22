@@ -28,7 +28,7 @@ logstash-config-inputs:
     - user: root
     - group: root
     - mode: 755
-    - source: salt://logstash/files/01-inputs.conf
+    - source: {{logstash.inputs_source}}
     - template: jinja
     - require:
       - pkg: logstash-pkg
@@ -45,7 +45,7 @@ logstash-config-filters:
     - user: root
     - group: root
     - mode: 755
-    - source: salt://logstash/files/02-filters.conf
+    - source: {{logstash.filters_source}}
     - template: jinja
     - require:
       - pkg: logstash-pkg
@@ -62,7 +62,7 @@ logstash-config-outputs:
     - user: root
     - group: root
     - mode: 755
-    - source: salt://logstash/files/03-outputs.conf
+    - source: {{logstash.outputs_source}}
     - template: jinja
     - require:
       - pkg: logstash-pkg
